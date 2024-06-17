@@ -1,0 +1,278 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./imagens/pipoca-em-uma-mesa-em-frente-a-uma-sala-de-cinema.jpg');
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1; 
+}
+nav{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+ul {
+  list-style: none;
+}
+li a {
+  color: #486CF0;
+  font-weight: bold;
+  transition: color 0.6s ease;
+}
+
+li a:hover {
+  color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+
+}
+
+.cabe {
+  border-radius: 5px;
+  box-shadow: 2px 3px 4px 1px;
+  background-color: rgba(242, 242, 242, 0.6); 
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin-right: 15px; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff6600; 
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+  padding: 15px;
+  color: white;
+}
+
+.precos {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+.preco-filmes,
+.preco-filmes2,
+.preco-filmes3 {
+  position: relative;
+  background-size: cover;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  border: 5px solid #c2d5e5;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: scale(1);
+  transition: transform 0.5s ease; 
+}
+
+
+.preco-filmes,
+.preco-filmes2,
+.preco-filmes3 {
+  background-position: center;
+}
+
+
+.preco-filmes::before,
+.preco-filmes2::before,
+.preco-filmes3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; 
+  transition: opacity 0.5s ease;
+  opacity: 0; 
+}
+
+
+.preco-filmes:hover::before,
+.preco-filmes2:hover::before,
+.preco-filmes3:hover::before {
+  opacity: 1;
+}
+
+.preco-filmes {
+  background-image: url('./imagens/filme3.png');
+}
+
+.preco-filmes2 {
+  background-image: url('./imagens/filme1.jpg');
+}
+
+.preco-filmes3 {
+  background-image: url('./imagens/filme4.jpg');
+}
+
+.preco-filmes:hover,
+.preco-filmes2:hover,
+.preco-filmes3:hover {
+  transform: scale(1.1);
+}
+
+
+.preco-filmes p,
+.preco-filmes2 p,
+.preco-filmes3 p {
+  font-size: 80px;
+  font-weight: bold;
+  color: #fafafa;
+  text-align: center;
+}
+
+.preco-filmes strong,
+.preco-filmes2 strong,
+.preco-filmes3 strong {
+  font-size: 50px;
+  color: #00ff6e;
+}
+
+.sobre {
+  color: #eeeded;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 0.3s forwards; 
+}
+
+@media screen and (max-width: 768px) {
+  .sobre {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sobre {
+    font-size: 14px;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 1; 
+  }
+}
+.contato {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.campo-contato {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+
+.campo-contato label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.campo-contato input,
+.campo-contato textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+.campo-contato textarea {
+  resize: vertical;
+}
+
+
+
+.campo-contato input[type="tel"],
+.campo-contato input[type="email"] {
+  width: calc(100% - 18px); 
+}
+
+
+.campo-contato input[required],
+.campo-contato textarea[required] {
+  border-color: #ff6666;
+}
+label{
+  color: white;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+footer{
+  color: white;
+  margin-top: 2%;
+  text-align:center;
+  font-size: 23px;
+}
+
